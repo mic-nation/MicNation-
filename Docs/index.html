@@ -4,3 +4,25 @@
   <p>Images des artistes, événements et coulisses de MicNation.</p>
   <a href="galerie.html" class="btn">Voir la galerie</a>
 </section>
+
+<body>
+
+  <!-- Inclure le header -->
+  <div id="header-container"></div>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      });
+  </script>
+
+  <!-- Ton ancien contenu continue ici -->
+  <h1>🎤 Freestyles MicNation</h1>
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+    <p>Freestyle #1 - Kin Flow 🔥</p>
+  </div>
+  <!-- etc... -->
+
+</body>
