@@ -1,0 +1,23 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon site</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('images/ton-logo.jpeg'); /* adapte le chemin */
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 400px;
+      background-color: #000;
+      height: 100vh;
+}
+  </style>
+</head>
+<body>
+  <!-- contenu de ton site -->
+</body>
+</html>
