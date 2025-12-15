@@ -8,7 +8,7 @@
     body {
       margin: 0;
       padding: 0;
-      background-image: url('images/ton-logo.jpeg'); /* adapte le chemin */
+      background-image: url('images/micnation.png'); /* adapte le chemin */
       background-repeat: no-repeat;
       background-position: center center;
       background-size: 400px;
