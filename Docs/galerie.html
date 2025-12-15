@@ -1,85 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Galerie - MicNation</title>
-  <style>
-    body {
-      background-color: #0d0d0d;
-      color: #f5f5f5;
-      font-family: 'Arial', sans-serif;
-      padding: 40px 20px;
-    }
-    h1 {
-      color: #ff4c4c;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .gallery img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #ff4c4c;
-    }
-    p {
-      text-align: center;
-      font-size: 1.1em;
-      margin-top: 10px;
-    }
-  </style>
-</head>
-<body>
 
-  <h1>📸 Galerie MicNation</h1>
-
+```html
+<section id="galerie">
+  <h2>Galerie</h2>
   <div class="gallery">
-    <div>
-      <img src="https://via.placeholder.com/200x200?text=Artiste+1" alt="Artiste 1">
-      <p>Artiste 1</p>
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/200x200?text=Studio+Session" alt="Studio">
-      <p>Studio Session</p>
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/200x200?text=Concert+Live" alt="Concert">
-      <p>Concert Live</p>
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/200x200?text=Backstage" alt="Backstage">
-      <p>Backstage</p>
-    </div>
+    <img src="images/photo1.jpg" alt="Photo 1">
+    <img src="images/photo2.jpg" alt="Photo 2">
+    <img src="images/photo3.jpg" alt="Photo 3">
+    <!-- Ajoute autant d'images que tu veux -->
   </div>
-
-</body>
-</html>
-
-<body>
-
-  <!-- Inclure le header -->
-  <div id="header-container"></div>
-  <script>
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header-container').innerHTML = data;
-      });
-  </script>
-
-  <!-- Ton ancien contenu continue ici -->
-  <h1>🎤 Freestyles MicNation</h1>
-  <div class="video">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-    <p>Freestyle #1 - Kin Flow 🔥</p>
-  </div>
-  <!-- etc... -->
-<div style="text-align:center; margin-top:20px;">
-    <img src="micnation-logo.png" alt="MicNation Logo" style="width:180px;">
-</div>
+</section>
