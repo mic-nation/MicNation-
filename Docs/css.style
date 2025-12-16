@@ -91,3 +91,31 @@
   transform: scale(1.1);
   box-shadow: 0 0 15px #ffcc00;
 }
+.freestyles {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.freestyles h2 {
+  color: #ffcc00;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px #ffcc00;
+}
+
+.videos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.videos iframe {
+  border-radius: 10px;
+  box-shadow: 0 0 15px #ff4c4c;
+  transition: transform 0.3s ease;
+}
+
+.videos iframe:hover {
+  transform: scale(1.05);
+}
