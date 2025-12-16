@@ -80,4 +80,14 @@
 
 .grid img:hover {
   transform: scale(1.1);
+}@media (max-width: 600px) {
+  .grid img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.grid img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ffcc00;
 }
