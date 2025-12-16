@@ -57,3 +57,11 @@ h3 {
   transition: transform 0.3s ease;
   box-shadow: 0 0 15px #00ffcc;
 }
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1.5em;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
