@@ -20,7 +20,6 @@ html
 </head>
 <body>
   <!-- contenu de ton site -->
-</html>
 `css
 .header {
   background-image: url('stokage/picture/micnation-logo.png');
