@@ -119,3 +119,38 @@
 .videos iframe:hover {
   transform: scale(1.05);
 }
+.articles {
+  margin-top: 50px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.articles h2 {
+  color: #ffcc00;
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  text-shadow: 0 0 5px #ffcc00;
+}
+
+.article-card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px #ff4c4c;
+  transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+  transform: scale(1.02);
+}
+
+.article-card h3 {
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+.article-card p {
+  color: #f5f5f5;
+  font-size: 1em;
+}
