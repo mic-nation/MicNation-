@@ -15,6 +15,10 @@ h2 {
   text-transform: uppercase;
   border-bottom: 2px solid #00ffcc;
 }
+.freestyle-list p:hover {
+  background-color: #333;
+  cursor: pointer;
+}
 
 h3 {
   color: #e50914;
