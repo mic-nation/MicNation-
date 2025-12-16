@@ -82,3 +82,20 @@ h3 {
   font-weight: 600;
   letter-spacing: 1px;
 }
+nav {
+  background-color: #1a1a1a;
+  padding: 1em;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid #e50914;
+}
+
+nav a {
+  color: #eee;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #00ffcc;
+}
