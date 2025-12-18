@@ -1,60 +1,124 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html><html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MicNation</title>
-  <link rel="stylesheet" href="Docs/style.css">
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MicNation</title>  <!-- STYLE -->  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-  <!-- Accueil -->
-  <section id="accueil" class="hero">
-    <div class="hero-content">
+    body {
+      background: #0f0f0f;
+      color: #ffffff;
+      scroll-behavior: smooth; /* SCROLL FLUIDE */
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #000000;
+      padding: 15px 30px;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h1 {
+      color: #e10600;
+      font-size: 24px;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      color: #e10600;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 120px 40px 60px;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      opacity: 0.9;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      background: #e10600;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .btn:hover {
+      background: #ff1c1c;
+    }
+
+    footer {
+      background: #000000;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+  </style></head>
+<body>  <!-- HEADER -->  <header>
+    <nav>
       <h1>MicNation</h1>
-      <p class="slogan">Là où les talents prennent le mic !</p>
-    </div>
-  </section>
-
-  <!-- Menu -->
-  <nav class="menu">
-    <ul>
-      <li><a href="#accueil">Accueil</a></li>
-      <li><a href="#galerie">Galerie</a></li>
-      <li><a href="#freestyles">Freestyles</a></li>
-      <li><a href="#articles">Articles</a></li>
-    </ul>
-  </nav>
-
-  <!-- Galerie -->
-  <section id="galerie" class="galerie">
-    <h2>Galerie</h2>
-    <div class="gallery-grid">
-      <img src="Docs/micnation-logo.png" alt="Logo MicNation">
-      <!-- Ajoute ici d'autres images -->
-    </div>
-  </section>
-
-  <!-- Freestyles -->
-<section id="freestyles" class="freestyles">
-  <h2>Freestyles</h2>
-  <div class="freestyle-list">
-    <p>🎤 Freestyle #1 - Kin Flow</p>
-    <p>🎤 Freestyle #2 - RDC Drill</p>
-    <!-- Tu peux ajouter des liens ou des players ici -->
-  </div>
-</section>
-
-  <!-- Articles -->
-  <section id="articles" class="articles">
-    <h2>Articles</h2>
-    <article>
-      <h3>Le rap congolais en pleine ascension</h3>
-      <p>MicNation explore les talents qui font vibrer Kinshasa...</p>
-    </article>
-    <!-- Ajoute d'autres articles ici -->
-  </section>
-
-</body>
-</html>
-<link rel="stylesheet" href="Docs/style.css">
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#freestyles">Freestyles</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>  <!-- ACCUEIL -->  <section id="accueil" class="hero">
+    <h2>Là où les talents prennent le mic 🎤</h2>
+    <p>
+      MicNation est une plateforme dédiée à la promotion des talents urbains,
+      freestyles, rap et cultures street.
+    </p>
+    <button class="btn" onclick="document.getElementById('freestyles').scrollIntoView()">Découvrir</button>
+  </section>  <!-- FREESTYLES -->  <section id="freestyles">
+    <h2>🔥 Freestyles</h2>
+    <p>
+      Découvre des artistes indépendants et leurs performances exclusives
