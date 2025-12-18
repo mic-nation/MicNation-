@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MicNation</title>  <!-- STYLE -->  <style>
+  <title>MicNation</title>  <style>
     * {
       margin: 0;
       padding: 0;
@@ -13,12 +13,32 @@
     body {
       background: #0f0f0f;
       color: #ffffff;
-      scroll-behavior: smooth; /* SCROLL FLUIDE */
+      overflow: hidden; /* on gère le scroll nous-mêmes */
+    }
+
+    /* CONTENEUR GLOBAL AVEC SCROLL HORIZONTAL */
+    .horizontal-scroll {
+      display: flex;
+      flex-direction: row;
+      width: 400vw; /* 4 sections */
+      height: 100vh;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .page {
+      width: 100vw;
+      height: 100vh;
+      overflow-y: auto; /* scroll vertical dans chaque page */
+      scroll-behavior: smooth;
+      padding: 120px 40px 60px;
     }
 
     header {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
       background: #000000;
       padding: 15px 30px;
@@ -48,15 +68,11 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
+      cursor: pointer;
     }
 
     nav ul li a:hover {
       color: #e10600;
-    }
-
-    section {
-      min-height: 100vh;
-      padding: 120px 40px 60px;
     }
 
     .hero {
@@ -65,6 +81,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      height: calc(100vh - 120px);
     }
 
     .hero h2 {
@@ -78,19 +95,40 @@
       opacity: 0.9;
     }
 
-    .btn {
-      margin-top: 30px;
-      padding: 12px 30px;
-      background: #e10600;
-      border: none;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 5px;
+    /* GALERIE */
+    .galerie {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
     }
 
-    .btn:hover {
-      background: #ff1c1c;
+    .card {
+      background: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateX(10px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .info h3 {
+      color: #e10600;
+      margin-bottom: 5px;
     }
 
     footer {
@@ -101,24 +139,43 @@
       opacity: 0.7;
     }
   </style></head>
-<body>  <!-- HEADER -->  <header>
-    <nav>
-      <h1>MicNation</h1>
-      <ul>
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#freestyles">Freestyles</a></li>
-        <li><a href="#articles">Articles</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>  <!-- ACCUEIL -->  <section id="accueil" class="hero">
-    <h2>Là où les talents prennent le mic 🎤</h2>
-    <p>
-      MicNation est une plateforme dédiée à la promotion des talents urbains,
-      freestyles, rap et cultures street.
-    </p>
-    <button class="btn" onclick="document.getElementById('freestyles').scrollIntoView()">Découvrir</button>
-  </section>  <!-- FREESTYLES -->  <section id="freestyles">
+<body><header>
+  <nav>
+    <h1>MicNation</h1>
+    <ul>
+      <li><a onclick="goToPage(0)">Accueil</a></li>
+      <li><a onclick="goToPage(1)">Galerie</a></li>
+      <li><a onclick="goToPage(2)">Freestyles</a></li>
+      <li><a onclick="goToPage(3)">Contact</a></li>
+    </ul>
+  </nav>
+</header><div class="horizontal-scroll" id="container">  <section class="page">
+    <div class="hero">
+      <h2>Là où les talents prennent le mic 🎤</h2>
+      <p>Scroll de haut en bas ET de gauche à droite</p>
+    </div>
+  </section>  <section class="page">
+    <h2>🎤 Galerie des artistes</h2>
+    <div class="galerie">
+      <div class="card">
+        <img src="galerie/pictures/photo1.jpg">
+        <div class="info"><h3>Artiste One</h3><p>Rap</p></div>
+      </div>
+      <div class="card">
+        <img src="galerie/pictures/photo2.jpg">
+        <div class="info"><h3>Artiste Two</h3><p>Drill</p></div>
+      </div>
+    </div>
+  </section>  <section class="page">
     <h2>🔥 Freestyles</h2>
-    <p>
-      Découvre des artistes indépendants et leurs performances exclusives
+    <p>Performances exclusives</p>
+  </section>  <section class="page">
+    <h2>📩 Contact</h2>
+    <p>Envoie ton freestyle</p>
+  </section></div><footer>© 2025 MicNation</footer><script>
+  function goToPage(index) {
+    const container = document.getElementById('container');
+    container.scrollLeft = index * window.innerWidth;
+  }
+</script></body>
+</html>
