@@ -2,202 +2,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MicNation</title>  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-      background: #0f0f0f;
-      color: #ffffff;
-      overflow: hidden; /* on gère le scroll nous-mêmes */
-    }
-
-    /* CONTENEUR GLOBAL AVEC SCROLL HORIZONTAL */
-    .horizontal-scroll {
-      display: flex;
-      flex-direction: row;
-      width: 400vw; /* 4 sections */
-      height: 100vh;
-      overflow-x: auto;
-      overflow-y: hidden;
-      scroll-behavior: smooth;
-    }
-
-    .page {
-      width: 100vw;
-      height: 100vh;
-      overflow-y: auto; /* scroll vertical dans chaque page */
-      scroll-behavior: smooth;
-      padding: 120px 40px 60px;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #000000;
-      padding: 15px 30px;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.6);
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav h1 {
-      color: #e10600;
-      font-size: 24px;
-      letter-spacing: 2px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    nav ul li a:hover {
-      color: #e10600;
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      height: calc(100vh - 120px);
-    }
-
-    .hero h2 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 600px;
-      opacity: 0.9;
-    }
-
-    /* GALERIE */
-    .galerie {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .card {
-      background: #1a1a1a;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateX(10px);
-    }
-
-    .card img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-    }
-
-    .info {
-      padding: 15px;
-      text-align: center;
-    }
-
-    .info h3 {
-      color: #e10600;
-      margin-bottom: 5px;
-    }
-
-    footer {
-      background: #000000;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      opacity: 0.7;
-    }
-  </style></head>
-<body><header>
-  <nav>
-    <h1>MicNation</h1>
+  <title>MicNation</title>  <!-- LIAISON DU STYLE GLOBAL -->  <link rel="stylesheet" href="docs/style.css">
+</head>
+<body>  <!-- HEADER / MENU PRINCIPAL -->  <header>
+    <nav>
+      <h1>MicNation</h1>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="docs/galerie.html">Galerie</a></li>
+        <li><a href="docs/freestyle.html">Freestyles</a></li>
+        <li><a href="docs/article.html">Articles</a></li>
+        <li><a href="docs/menu.html">Menu</a></li>
+      </ul>
+    </nav>
+  </header>  <!-- ACCUEIL -->  <section class="hero">
+    <h2>Là où les talents prennent le mic 🎤</h2>
+    <p>
+      MicNation est une plateforme dédiée à la promotion des talents urbains,
+      freestyles, rap et culture street.
+    </p>
+  </section>  <!-- PRESENTATION -->  <section>
+    <h2>🔥 À propos de MicNation</h2>
+    <p>
+      MicNation met en avant les artistes indépendants à travers des galeries,
+      freestyles vidéo, articles et projets culturels.
+    </p>
+  </section>  <!-- LIENS RAPIDES -->  <section>
+    <h2>🚀 Accès rapide</h2>
     <ul>
-      <li><a onclick="goToPage(0)">Accueil</a></li>
-      <li><a href="docs/galerie.html">Galerie</a></li>
-      <li><a href="docs/freestyle.html">Freestyles</a></li>
-      <li><a onclick="goToPage(3)">Contact</a></li>
+      <li><a href="docs/galerie.html">Voir la galerie des artistes</a></li>
+      <li><a href="docs/freestyle.html">Regarder les freestyles</a></li>
+      <li><a href="docs/article.html">Lire les articles</a></li>
+      <li><a href="docs/menu.html">Voir le menu complet</a></li>
     </ul>
-  </nav>
-</header><div class="horizontal-scroll" id="container">  <section class="page">
-    <div class="hero">
-      <h2>Là où les talents prennent le mic 🎤</h2>
-      <p>Scroll de haut en bas ET de gauche à droite</p>
-    </div>
-  </section>  <section class="page">
-    <h2>🎤 Galerie des artistes</h2>
-    <div class="galerie">
-      <div class="card">
-        <img src="galerie/pictures/photo1.jpg">
-        <div class="info"><h3>Artiste One</h3><p>Rap</p></div>
-      </div>
-      <div class="card">
-        <img src="galerie/pictures/photo2.jpg">
-        <div class="info"><h3>Artiste Two</h3><p>Drill</p></div>
-      </div>
-    </div>
-  </section>  <section class="page">
-    <h2>🔥 Freestyles</h2>
-    <p>Performances exclusives des artistes MicNation.</p><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:40px;">
-  <div>
-    <iframe width="100%" height="250" src="https://www.youtube.com/embed/VIDEO_ID_1" 
-      title="Freestyle 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-    </iframe>
-    <p style="margin-top:10px;">🎤 Artiste One – Freestyle</p>
-  </div>
-
-  <div>
-    <iframe width="100%" height="250" src="https://www.youtube.com/embed/VIDEO_ID_2" 
-      title="Freestyle 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-    </iframe>
-    <p style="margin-top:10px;">🎤 Artiste Two – Freestyle</p>
-  </div>
-
-  <div>
-    <iframe width="100%" height="250" src="https://www.youtube.com/embed/VIDEO_ID_3" 
-      title="Freestyle 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-    </iframe>
-    <p style="margin-top:10px;">🎤 Artiste Three – Freestyle</p>
-  </div>
-</div>
-
-  </section>  <section class="page">
-    <h2>📩 Contact</h2>
-    <p>Envoie ton freestyle</p>
-  </section></div><footer>© 2025 MicNation</footer><script>
-  function goToPage(index) {
-    const container = document.getElementById('container');
-    container.scrollLeft = index * window.innerWidth;
-  }
-</script></body>
+  </section>  <!-- FOOTER -->  <footer>
+    © 2025 MicNation — Tous droits réservés
+  </footer></body>
 </html>
